@@ -6,7 +6,11 @@ name: Workflow
 on:
   schedule:
   - cron:  '00 06 * * *'
+  push:
+    branches:
+      - main
 
+  
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel# on vérifie si c'est dur
 jobs:
   traitement_donnees:

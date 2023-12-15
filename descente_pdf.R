@@ -9,7 +9,7 @@ listelienspdf<-read_html(urlponctualite)%>%
 
 goodlistelienspdf<-listelienspdf[grepl("Normandie.pdf",listelienspdf)]
 goodlistelienspdf<-substr(goodlistelienspdf,60,3000)
-goodlistelienspdf<-gsub("\\%2520"," ",goodlistelienspdf)
+goodlistelienspdf<-gsub("\\%2520","%20",goodlistelienspdf)
 goodlistelienspdf<-gsub("\\%25C3%25A9","é",goodlistelienspdf)
 dernierfichier<-goodlistelienspdf[length(goodlistelienspdf)]
 bonnedate<-substr(dernierfichier,58,73)

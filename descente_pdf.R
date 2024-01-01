@@ -11,6 +11,11 @@ goodlistelienspdf<-listelienspdf[grepl("Normandie.pdf",listelienspdf)]
 goodlistelienspdf<-substr(goodlistelienspdf,60,3000)
 goodlistelienspdf<-gsub("\\%2520","%20",goodlistelienspdf)
 goodlistelienspdf<-gsub("\\%25C3%25A9","é",goodlistelienspdf)
-dernierfichier<-goodlistelienspdf[length(goodlistelienspdf)]
-bonnedate<-substr(dernierfichier,58,73)
-download.file(url=dernierfichier,destfile=paste0("data/",bonnedate,".pdf"), mode="wb")
+Fichiers<-tibble(urlfichier=goodlistelienspdf)
+Fichiers$bonnedate<-substr(Fichiers$urlfichier,58,77)
+
+fichiersdejadispo<-list.files("data/",pattern="pdf")
+for (i in 1:nrow(Fichiers)){
+  download.file(url=Fichiers$urlfichier[i],destfile=paste0("data/",Fichiers$bonnedate[i],".pdf"), 
+                mode="wb") 
+}

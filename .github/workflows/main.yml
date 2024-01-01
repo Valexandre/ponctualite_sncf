@@ -5,7 +5,7 @@ name: Workflow
 # Controls when the workflow will run s
 on:
   schedule:
-  - cron:  '00 06 * * *'
+  - cron:  '0 6 */3 * *'
   push:
     branches:
       - main
@@ -29,7 +29,7 @@ jobs:
      # Set-up R
     - name: Install packages
       run: |
-        install.packages(c("tidyverse", "rvest"),type="binary")
+        install.packages(c("tidyverse", "rvest","pdftools"),type="binary")
       shell: Rscript {0}
 
           

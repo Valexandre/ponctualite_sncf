@@ -25,7 +25,7 @@ for (i in 1:nrow(Fichiers)){
 #fichiers dispo dans data
 alldispo<-list.files("data/",pattern="pdf")
 nouveauxdispo<-alldispo[!alldispo%in%dispoavantscrap$x]
-
+write.csv(alldispo,"data/fichiersdejadispo.csv")
 
 SorsLesDonneesDesPDF<-function(urlascrap){
   gooddate<-gsub("\\.pdf","",gsub("%20"," ",urlascrap))

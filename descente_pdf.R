@@ -23,7 +23,7 @@ for (i in 1:nrow(Fichiers)){
 
 #fichiers dispo dans data
 alldispo<-list.files("data/",pattern="pdf")
-nouveauxdispo<-alldispo[!alldispo%in%fichiersdejadispo$x]
+nouveauxdispo<-alldispo[!alldispo%in%dispoavantscrap$x]
 
 
 SorsLesDonneesDesPDF<-function(urlascrap){

@@ -1,5 +1,6 @@
 library(tidyverse)
 library(rvest)
+library(pdftools)
 #fichiers dispo dans data
 dispoavantscrap<-read_csv("data/fichiersdejadispo.csv")
 

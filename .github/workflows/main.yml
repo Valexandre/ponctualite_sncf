@@ -4,8 +4,8 @@ name: Workflow
 
 # Controls when the workflow will run s
 on:
-  schedule:
-  - cron:  '0 6 */3 * *'
+  #schedule:
+  #- cron:  '0 6 */3 * *'
   push:
     branches:
       - main
